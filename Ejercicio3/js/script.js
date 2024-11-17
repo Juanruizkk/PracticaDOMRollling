@@ -6,7 +6,7 @@ function agregarTarea(tarea) {
         $nuevoli.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
         $nuevoli.innerText = tarea;
 
-        // Crear botón de "Delete"
+        // Creo botón de "Delete"
         const $deleteButton = document.createElement("button");
         $deleteButton.classList.add("btn-delete", "btn", "btn-danger", "ms-auto");
         $deleteButton.innerText = "Delete";
@@ -27,9 +27,8 @@ function obtenerTexto(e) {
 
     if (tarea.trim() !== "") {
         agregarTarea(tarea);
-        input.value = ""; // Limpiar el campo de entrada
+        input.value = "";
 
-        // Cerrar el modal después de agregar la tarea
         const modal = bootstrap.Modal.getInstance(document.querySelector('#abrirForm'));
         modal.hide();
     } else {
