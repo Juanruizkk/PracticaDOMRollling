@@ -3,9 +3,9 @@ class Persona {
         this.nombre = nombre;
         this.edad = edad;
         this.dni = dni;
-        this.sexo = sexo;
-        this.peso = peso;
-        this.altura = altura;
+        this.sexo = sexo; // H para hombre, M para mujer
+        this.peso = peso; // en kg
+        this.altura = altura; // en metros
         this.anioNacimiento = anioNacimiento;
     }
 
@@ -76,7 +76,7 @@ class Persona {
         const generaciones = [
             {
                 nombre: "Generación Z",
-                rango: [1994, 2024],
+                rango: [1994, 2010],
                 rasgo: "Irreverencia",
             },
             {
@@ -106,13 +106,29 @@ class Persona {
                 this.anioNacimiento >= gen.rango[0] &&
                 this.anioNacimiento <= gen.rango[1]
         );
-        if (generacion) {
-            return `${this.nombre} pertenece a la ${generacion.nombre} y su rasgo característico es ${generacion.rasgo}.`
 
+        if (generacion) {
+            console.log(
+                `${this.nombre} pertenece a la ${generacion.nombre} y su rasgo característico es ${generacion.rasgo}.`
+            );
+        } else {
+            console.log("No se ha podido determinar la generación.");
         }
     }
 }
 
+// Ejemplo de uso
+const persona1 = new Persona("Juan", 25, "12345678A", "H", 70, 1.75, 1998);
+persona1.mostrarGeneracion(); // Salida: Juan pertenece a la Generación Z y su rasgo característico es Irreverencia.
+
+
+/* Funcion es mayor de edad */
+
+const esMayor = (edad) => edad > 18 ? `${this.nombre} es mayor de edad` : `${this.nombre} no es mayor de edad`;
+
+const mostrarDatos = () => {
+    `${this.nombre}, ${this.edad}, ${this.dni}, ${this.sexo}, ${this.peso}, ${this.altura}, ${this.anioNacimiento}.`
+}
 
 
 /* Validar form */
@@ -136,81 +152,69 @@ class Persona {
     })
 })()
 
-const $form = document.querySelector('form');
-let persona;
-const obtenerDatos = (e) => {
-    e.preventDefault();
-    const d = document;
-    const $nombre = d.getElementById('nombre').value,
-        $edad = d.getElementById('edad').value,
-        $dni = d.getElementById('dni').value,
-        $fechanac = d.getElementById('fechanac').value,
-        $peso = d.getElementById('peso').value,
-        $altura = d.getElementById('altura').value,
+/* Selectores formularios */
+const d = document;
+let genero;
+const $nombre = d.getElementById('nombre').value,
+    $edad = d.getElementById('edad').value,
+    $dni = d.getElementById('dni').value,
+    $fechanac = d.getElementById('fechanac').value,
+    $peso = d.getElementById('peso').value,
+    $altura = d.getElementById('altura').value,
+    $form = d.querySelector('form'),
+    $radios = document.getElementsByName('sexo'),
+    $whiteSpace = d.querySelector('person');
 
-        $radios = document.getElementsByName('sexo');
 
-
-    let sexo;
-    for (let radio of $radios) {
-        if (radio.checked) {
-            sexo = radio.value;
-            break;
-        }
-    }
-
-    // Crea la instancia de Persona
-    persona = new Persona($nombre, parseInt($edad), $dni, sexo, parseFloat($peso), parseFloat($altura), parseInt($fechanac));
-    mostrarMensajeConBotones();
-}
 // Función para crear el mensaje con los botones
 function mostrarMensajeConBotones() {
-    // Creo un contenedor para el mensaje y los botones
+    // Crea un contenedor para el mensaje y los botones
     const messageContainer = document.getElementById('person');
-    messageContainer.innerHTML = "";
-    // Creo el elemento de mensaje
+
+    // Crea el elemento de mensaje
     const mensaje = document.createElement('div');
-    mensaje.classList.add('alert', 'alert-success', 'mt-4');
+    mensaje.classList.add('alert', 'alert-success', 'mt-3');
     mensaje.textContent = 'Persona creada con éxito';
 
-    // Creo los tres botones
+    // Crea los tres botones
     const boton1 = document.createElement('button');
     boton1.classList.add('btn', 'btn-primary');
-    boton1.textContent = 'Mostrar Generacion';
-    boton1.addEventListener('click', () => {
-        const mensaje = persona.mostrarGeneracion();
-        if (mensaje) {
-            alert(mensaje);
-        } else {
-            alert("No se pudo determinar la generación.");
-        }
-    });
+    boton1.textContent = 'Botón 1';
 
     const boton2 = document.createElement('button');
     boton2.classList.add('btn', 'btn-secondary');
-    boton2.textContent = 'Es mayor';
-    boton2.addEventListener('click', () => {
-        const esMayor = persona.edad > 18;
-        alert(`${persona.getNombre()} ${esMayor ? 'es mayor de edad' : 'no es mayor de edad'}.`);
-    });
+    boton2.textContent = 'Botón 2';
+
     const boton3 = document.createElement('button');
     boton3.classList.add('btn', 'btn-danger');
-    boton3.textContent = 'Mostrar informacion';
-    boton3.addEventListener('click', () => {
-        alert(`Nombre: ${persona.getNombre()}\nEdad: ${persona.getEdad()}\nDNI: ${persona.getDNI()}\nSexo: ${persona.getSexo()}\nPeso: ${persona.getPeso()}\nAltura: ${persona.getAltura()}\nAño de Nacimiento: ${persona.getAnioNacimiento()}`);
-    });
-    // Agregp los botones al contenedor del mensaje
+    boton3.textContent = 'Botón 3';
+
+    // Agrega los botones al contenedor del mensaje
     const botonesContainer = document.createElement('div');
     botonesContainer.classList.add('d-flex', 'justify-content-around');
     botonesContainer.appendChild(boton1);
     botonesContainer.appendChild(boton2);
     botonesContainer.appendChild(boton3);
 
-    // Agrego el mensaje y los botones al contenedor principal
+    // Agrega el mensaje y los botones al contenedor principal
     messageContainer.appendChild(mensaje);
     messageContainer.appendChild(botonesContainer);
 }
 
+
+
+
+const obtenerDatos = (e) => {
+    e.preventDefault();
+    // for (let radio of radios) {
+    //     if (radio.checked) {
+    //         genero = radio.value;
+    //         break;
+    //     }
+    // }
+    // Llamamos a la función para mostrar el mensaje y los botones
+    mostrarMensajeConBotones();
+}
 
 $form.addEventListener('submit', obtenerDatos);
 
