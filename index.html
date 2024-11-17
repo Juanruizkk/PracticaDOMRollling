@@ -14,6 +14,7 @@
         <div class="row text-center mb-4">
             <h1 class="text-info fw-bold">Formulario Creación de Persona</h1>
         </div>
+        <!-- Formulario -->
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
                 <form class="needs-validation p-4 border rounded-3 shadow bg-body-secondary" novalidate>
@@ -33,7 +34,8 @@
                         </div>
                         <div class="col-md-6">
                             <label for="dni" class="form-label fw-semibold">DNI</label>
-                            <input type="text" class="form-control" id="dni" placeholder="Ingresa tu DNI" required>
+                            <input type="text" class="form-control" id="dni" placeholder="Ingresa tu DNI"
+                                pattern="\d{8}" maxlength="8" required>
                             <div class="valid-feedback">¡Perfecto!</div>
                             <div class="invalid-feedback">Por favor, escribe tu DNI.</div>
                         </div>
@@ -77,6 +79,11 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div id="person"></div>
             </div>
         </div>
     </div>
