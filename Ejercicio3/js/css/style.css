@@ -1,0 +1,91 @@
+/* Reset básico */
+:root {
+    --main-font: sans-serif;
+    --font-size: 16px;
+    --main-color: rgb(177, 217, 98);
+    --second-color: black;
+    --main-modal-color: rgb(165, 226, 137);
+    --second-modal-color: grey;
+    --container-witdh: 1200px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: var(--main-font);
+    /* Ajusta según el tipo de fuente preferido */
+}
+
+/* Quitar estilos de listas */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Quitar subrayado de enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Imágenes responsivas */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Botones */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mejoras de tipografía */
+body,
+input,
+textarea,
+button,
+select {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.5;
+    color: inherit;
+}
+
+/* Ocultar borde en los navegadores que aplican estilos a enlaces cuando están enfocados */
+a:focus,
+button:focus {
+    outline: none;
+}
+
+/* Espaciado consistente en formularios */
+input,
+textarea,
+select,
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+}
+
+/* Comienzo proyecto */
+
+h1 {
+    background-color: var(--main-modal-color);
+}
