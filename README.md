@@ -5,7 +5,7 @@ Este repositorio contiene una serie de ejercicios prácticos enfocados en el man
 ## Tabla de Contenidos
 Aclaracion: Algunos estan deployados manualmente, mientras que otros vinculados al repositorio de github. Esto ultimo me dio problemas, no se si se puede visualizar
 1. [Números Mágicos] numerosmagicosjuanruiz.netlify.app
-2. [Generaciones] resilient-otter-929994.netlify.app
+2. [Generaciones] https://resilient-otter-929994.netlify.app
 3. [Lista de Tareas ] https://illustrious-blancmange-dc357d.netlify.app/
 4. [Reloj] https://jovial-cactus-2de093.netlify.app/
 5. [Cronómetro] https://polite-lollipop-c90d43.netlify.app/
