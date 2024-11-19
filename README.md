@@ -102,4 +102,4 @@ Crea un temporizador donde el usuario pueda definir un tiempo inicial.
 ## Instalación
 
 1. Clona el repositorio:
-   git clone https://github.com/tu-usuario/ejercicios-javascript.git
+   git clone https://github.com/Juanruizkk/PracticaDOMRollling.git
